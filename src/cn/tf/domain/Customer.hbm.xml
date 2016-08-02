@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DTD在hibernate3.jar/org/hibernate包中 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 建立类和表的对应关系：
+		name：类的全名
+		table:对应的表
+		 -->
+	<class name="cn.tf.domain.Customer" table="CUSTOMERSH">
+		<!-- 映射主键 
+			name:默认情况类中的getId|setId
+			column:表中对应的字段（可以省略）
+		-->
+		<id name="id" column="ID">
+			<!-- 主键生成策略 -->
+			<generator class="native"></generator>
+		</id>
+		<!-- 映射其他的属性 :
+			name:默认情况类中的getName|setName
+			column:表中对应的字段（可以省略）
+			type:类型。Hibernate中的类型。可以不写。
+			length：数据库表中的字段长度
+		-->
+		<property name="name" column="NAME" type="string" length="255"></property>
+	</class>
+</hibernate-mapping>

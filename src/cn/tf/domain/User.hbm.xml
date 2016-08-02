@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DTD在hibernate3.jar/org/hibernate包中 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.tf.domain.User" table="USERSH">
+	
+		<id name="id" column="ID">
+			<!-- 主键生成策略： -->
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="username" column="USERNAME" type="string" length="255"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DTD文件可以在hibernate3.jar的org.hibernate中找到 -->
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 属性的name可以在 Hibernate发行包project\etc\hibernate.properties中找到。
+			参数名称的hibernate前缀可以省略
+		-->
+		<!-- 数据库连接配置 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/day15</property>
+		<property name="connection.username">zp</property>
+		<property name="connection.password">a</property>
+		<!-- 数据库连接池配置：使用Hibernate内置数据源 -->
+		<property name="connection.pool_size">10</property>
+		<!-- 数据库方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 二级缓存配置：暂时关闭 -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<!-- 控制台打印Hibernate执行的SQL语句 -->
+		<property name="show_sql">true</property>
+		<!-- 以方便阅读的形式显示sql语句 -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- 自动生成DDL -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- 告诉Hibernate框架所管理的映射文件 -->
+		<mapping resource="cn/tf/domain/Customer.hbm.xml"/>
+		<mapping resource="cn/tf/domain/User.hbm.xml"/>
+		
+	</session-factory>
+</hibernate-configuration>
+
+
+
+
+
+
+
+
